@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require("express");
-const Connection = require("./dbConfig");
+import Connection from './database/db.js';
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
