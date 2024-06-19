@@ -14,7 +14,7 @@ app.use(express.json());
 app.post('/search', async (req, res) => {
     console.log("asila");
     console.log(req.body.search);
-
+    try{
     const collectionName = 'products';
     const searchTerm = req.body.search;
     const ok = mongoose.connection.db.collection(collectionName);
@@ -29,6 +29,9 @@ app.post('/search', async (req, res) => {
     };
     const results = await ok.find(query).toArray();
     res.json(results);
+    }catch(error){
+        consol.log(error)
+    }
 })
 app.get('/', (req, res) => {
     res.send("server is running");
