@@ -4,7 +4,10 @@ const mongoose = require("mongoose");
 const dbConfig = async () => {
     try {
 
-       await mongoose.connect(process.env.MONGO_URI)
+       await mongoose.connect(process.env.MONGO_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        })
         console.log("db connected successfully");
 
     } catch (error) {
@@ -15,4 +18,3 @@ const dbConfig = async () => {
 
 
 module.exports = dbConfig
-
