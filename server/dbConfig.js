@@ -6,7 +6,7 @@ const Connection = async ()=>{
 
    const url = `mongodb+srv://Munu1234:UiFOtllXepY93Plu@cluster0.g2vdz2w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
     try{
-        await mongoose.connect(url);
+        await mongoose.connect(ur);
         console.log("database connected")
 
     }
