@@ -14,10 +14,8 @@ app.use(express.json());
 app.post('/search', async (req, res) => {
     console.log("asila");
     console.log(req.body.search);
-
-    const collectionName = 'products';
     const searchTerm = req.body.search;
-    const collection = mongoose.connection.db.collection(collectionName);
+    const collection = mongoose.connection.db.collection('products');
 
     // Construct MongoDB Query (Customize Based on Your Data)
     const query = {
