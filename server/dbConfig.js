@@ -1,20 +1,18 @@
-require('dotenv').config()
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const dbConfig = async () => {
-    const URI="mongodb+srv://Munu1234:UiFOtllXepY93Plu@cluster0.g2vdz2w.mongodb.net/test";
-    try {
-       await mongoose.connect(URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        })
-        console.log("db connected successfully");
 
-    } catch (error) {
-        console.log("something went wrong with db connection", error);
-        return;
+
+const Connection = async ()=>{
+
+   const url = `mongodb+srv://Munu1234:UiFOtllXepY93Plu@cluster0.g2vdz2w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+    try{
+        await mongoose.connect(url);
+        console.log("database connected")
+
+    }
+    catch(error){
+        console.log(`error while connection to database` , error.message)
     }
 }
 
-
-module.exports = dbConfig
+export default Connection;
