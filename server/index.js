@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require("express");
-import Connection from './dbConfig.js';
+const dbConfig = require("./dbConfig");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
@@ -13,8 +13,10 @@ app.use(express.json());
 app.post('/search', async (req, res) => {
     console.log("asila");
     console.log(req.body.search);
+
+    const collectionName = 'products';
     const searchTerm = req.body.search;
-    const collection = mongoose.connection.db.collection('products');
+    const collection = mongoose.connection.db.collection(collectionName);
 
     // Construct MongoDB Query (Customize Based on Your Data)
     const query = {
@@ -31,7 +33,7 @@ app.get('/', (req, res) => {
     res.send("server is running");
 })
 
-Connection();
+dbConfig();
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
 })
