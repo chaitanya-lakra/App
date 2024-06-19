@@ -17,7 +17,7 @@ app.post('/search', async (req, res) => {
 
     const collectionName = 'products';
     const searchTerm = req.body.search;
-    const collection = mongoose.connection.db.collection(collectionName);
+    const ok = mongoose.connection.db.collection(collectionName);
 
     // Construct MongoDB Query (Customize Based on Your Data)
     const query = {
@@ -27,7 +27,7 @@ app.post('/search', async (req, res) => {
             // Add other searchable fields as needed
         ]
     };
-    const results = await collection.find(query).toArray();
+    const results = await ok.find(query).toArray();
     res.json(results);
 })
 app.get('/', (req, res) => {
