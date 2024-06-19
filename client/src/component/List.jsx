@@ -4,7 +4,7 @@ const  List = ({newdata})=>{
     return(
         <>
          {
-            newdata? (
+            newdata[0]? (
 
               newdata.map(item => {
                 return (
