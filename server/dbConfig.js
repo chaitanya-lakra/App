@@ -2,10 +2,9 @@ require('dotenv').config()
 const mongoose = require("mongoose");
 
 const dbConfig = async () => {
-   const url = `mongodb+srv://Munu1234:UiFOtllXepY93Plu@cluster0.g2vdz2w.mongodb.net/test`;
     try {
 
-       await mongoose.connect(url);
+       await mongoose.connect( `mongodb+srv://Munu1234:UiFOtllXepY93Plu@cluster0.g2vdz2w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`);
         console.log("db connected successfully");
 
     } catch (error) {
