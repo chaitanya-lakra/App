@@ -11,7 +11,6 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/search', async (req, res) => {
-Connection();
     console.log("asila");
     console.log(req.body.search);
     const searchTerm = req.body.search;
@@ -32,6 +31,7 @@ app.get('/', (req, res) => {
     res.send("server is running");
 })
 
+Connection();
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
 })
