@@ -5,10 +5,7 @@ const dbConfig = async () => {
     const MONGO_URI="mongodb+srv://Munu1234:UiFOtllXepY93Plu@cluster0.g2vdz2w.mongodb.net/test";
     try {
 
-       await mongoose.connect(MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        })
+       await mongoose.connect(MONGO_URI);
         console.log("db connected successfully");
 
     } catch (error) {
