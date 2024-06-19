@@ -30,7 +30,7 @@ app.post('/search', async (req, res) => {
     const results = await ok.find(query).toArray();
     res.json(results);
     }catch(error){
-        consol.log(error)
+        consol.log(error);
     }
 })
 app.get('/', (req, res) => {
