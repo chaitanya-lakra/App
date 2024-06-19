@@ -6,12 +6,12 @@ const cors = require("cors");
 const app = express();
 
 const PORT = process.env.PORT;
-Connection();
 app.use(cors());
 
 app.use(express.json());
 
 app.post('/search', async (req, res) => {
+Connection();
     console.log("asila");
     console.log(req.body.search);
     const searchTerm = req.body.search;
