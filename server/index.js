@@ -6,6 +6,7 @@ const cors = require("cors");
 const app = express();
 
 const PORT = process.env.PORT;
+    dbConfig();
 app.use(cors());
 
 app.use(express.json());
@@ -13,11 +14,9 @@ app.use(express.json());
 app.post('/search', async (req, res) => {
     console.log("asila");
     console.log(req.body.search);
-    dbConfig();
     try{
-    const collectionName = 'products';
     const searchTerm = req.body.search;
-    const ok = mongoose.connection.db.collection(collectionName);
+    const ok = mongoose.connection.db.collection('products');
 
     // Construct MongoDB Query (Customize Based on Your Data)
     const query = {
