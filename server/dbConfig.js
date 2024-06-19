@@ -24,6 +24,6 @@ const dbConfig = async () => {
     catch(error){
         console.log(`error while connection to database` , error.message)
     }
-
+}
 
 module.exports = dbConfig
