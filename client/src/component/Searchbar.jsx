@@ -5,7 +5,7 @@ const Searchbar = ({data, setData , setNewdata})=>{
     const handleChange = async (e) => {
         e.preventDefault();
         if(data[0]){
-          var res = await axios.post("http://192.168.1.4:8000/search", { search: data })
+          var res = await axios.post("https://app-topaz-two.vercel.app/search", { search: data })
           console.log(res.data);
           setNewdata(res.data);
         }else{
