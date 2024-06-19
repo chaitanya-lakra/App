@@ -4,8 +4,7 @@ const  List = ({newdata})=>{
     return(
         <>
          {
-            newdata? (
-
+            newdata?(
               newdata.map(item => {
                 return (
                   <div className="list-container">
